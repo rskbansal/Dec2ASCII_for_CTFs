@@ -3,6 +3,7 @@ import sys
 def decode(dec_string):
   ans = ''
   i = 0
+  
   try:
     while(i != len(dec_string)):
       split = dec_string[i] + dec_string[i + 1]
@@ -24,5 +25,11 @@ def decode(dec_string):
     sys.exit(1)
 
 
-# def check(ascii_string):
-#   return isflag
+def check(ascii_string):
+  keywords = ['ctf', 'flag', '_', '{', '}']
+  
+  for i in keywords:
+    if(i in ascii_string.lower()):
+      return "Uff! That looks like a flag! Hope it helps you solve your CTF challenge :)\n\n"
+
+  return ""
